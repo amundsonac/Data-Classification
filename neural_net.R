@@ -12,6 +12,7 @@ trainingDat <- read.csv(
 trainingLabels <- read.table("label_training.txt",
                              header = FALSE)
 
+# trainingLabels <- trainingLabels$V1 == 1
 trainingLabels <- factor(trainingLabels$V1)
 
 ## Read in testing data attributes from CSV file
@@ -38,7 +39,7 @@ grid <- expand.grid(.size = c(1,5,10),
 
 neuralNet <- train(trainingDat,
                   trainingLabels,
-                  method = "neuralnet",
+                  method = "nnet",
                   preProcess = c("nzv", "center", "scale", "pca"),
                   trControl = fitControl
 )
