@@ -36,7 +36,7 @@ grid <- expand.grid(mfinal = (1:3)*3, maxdepth = c(1, 3),
                     coeflearn = c("Breiman", "Freund", "Zhu"))
 
 adaBoost <- train(trainingDat,
-                  trainingLabels,
+                  trainingLabels$V1,
                   method = "AdaBoost.M1",
                   preProcess = c("nzv", "center", "scale", "pca"),
                   trControl = fitControl,

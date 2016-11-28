@@ -30,6 +30,8 @@ fitControl <- trainControl(
   repeats = 10
 )
 
+trainingLabels <- factor(trainingLabels$V1)
+
 bayesGlm <- train(trainingDat,
              trainingLabels,
              method = "bayesglm",

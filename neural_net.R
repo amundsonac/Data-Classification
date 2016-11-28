@@ -12,6 +12,8 @@ trainingDat <- read.csv(
 trainingLabels <- read.table("label_training.txt",
                              header = FALSE)
 
+trainingLabels <- factor(trainingLabels$V1)
+
 ## Read in testing data attributes from CSV file
 testingDat <- read.csv(
   file = "testing_r.csv",
